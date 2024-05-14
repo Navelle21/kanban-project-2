@@ -5,7 +5,9 @@ const SideMenuLayout = () => {
   return (
     <div style={{ display: 'flex' }}>
       <SideMenu />
-      <Outlet />
+        <div style={{flex: '1'}}>
+            <Outlet />
+        </div>
     </div>
   )
 }

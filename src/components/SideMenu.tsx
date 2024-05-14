@@ -22,7 +22,7 @@ const SideMenu = (): JSX.Element => {
           <p style={styles.text}>Task List</p>
         </NavLink>
         <NavLink
-          to="/task-progress"
+          to="/progress-management"
           style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
             <span className="material-icons" style={styles.icon}>
               done
