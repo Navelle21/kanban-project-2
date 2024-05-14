@@ -1,6 +1,7 @@
 import React from 'react'
-import { useRecoilState } from 'recoil' 
-import { tasksState } from '../../TaskAtoms'  
+// import { useRecoilState } from 'recoil' 
+// import { tasksState } from '../../TaskAtoms'  
+import {useTasksAction} from '../../hooks/Tasks'
 import {
     TASK_PROGRESS_STATUS,
     TASK_PROGRESS_ID,
@@ -42,16 +43,18 @@ interface TaskListItemProps {
 }
 
 const TaskListItem = ({ task }: TaskListItemProps): JSX.Element => {
-    const [tasks, setTasks] = useRecoilState<Task[]>(tasksState)
+    // const [tasks, setTasks] = useRecoilState<Task[]>(tasksState)
    
-    const completeTask = (taskId: number): void => {
-        const updatedTasks: Task[] = tasks.map((task) =>
-          task.id === taskId
-            ? { ...task, progressOrder: TASK_PROGRESS_ID.COMPLETED }
-            : task,
-        )
-        setTasks(updatedTasks)
-      }
+    // const completeTask = (taskId: number): void => {
+    //     const updatedTasks: Task[] = tasks.map((task) =>
+    //       task.id === taskId
+    //         ? { ...task, progressOrder: TASK_PROGRESS_ID.COMPLETED }
+    //         : task,
+    //     )
+    //     setTasks(updatedTasks)
+    //   }
+
+    const {completeTask} = useTasksAction()
 
     return (
         <div style={styles.tableBody}>
@@ -60,7 +63,7 @@ const TaskListItem = ({ task }: TaskListItemProps): JSX.Element => {
             className="material-icons"
             style={getIconStyle(task.progressOrder)}
             onClick={(): void => {
-                completeTask(task.id) // Ditambahkan
+                completeTask(task.id) 
             }}
             >
                 check_circle
