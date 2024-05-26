@@ -3,11 +3,11 @@ import SideMenu from '../components/SideMenu'
 
 const SideMenuLayout = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'row'}}>
       <SideMenu />
-        <div style={{flex: '1'}}>
-            <Outlet />
-        </div>
+      <Outlet />
     </div>
   )
 }

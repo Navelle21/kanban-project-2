@@ -47,7 +47,6 @@ const SideMenu = (): JSX.Element => {
       backgroundColor: '#55ACC8',
       padding: '20px',
       minHeight: '100vh',
-      height: '100%',
     },
     link: {
       ...commonLinkStyles,
